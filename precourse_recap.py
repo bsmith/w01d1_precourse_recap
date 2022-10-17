@@ -28,7 +28,7 @@ def fib3(n):
 numbers = [1, 2, 3, 4, 5, 10, 15, 20, 25, 100]
 functions = [fib1, fib2, fib3]
 
-for idx in range(0, len(functions)):
+for idx, func in enumerate(functions):
     func = functions[idx]
     description = inspect.getdoc(func)
     print("")
