@@ -1,10 +1,12 @@
-"""Three fibonacci implementations
+"""Five fibonacci implementations
 """
 
 import inspect
 import math
+import numpy
+from numpy.linalg import matrix_power
 
-print("Three fibonacci implementations")
+print("Five fibonacci implementations")
 
 def fib1(n):
     """fib1 implements a simple recursive fibonacci function"""
@@ -37,8 +39,13 @@ def fib4(n):
             return helper(prev + prev2, prev, n - 1)
     return helper(1, 1, n)
 
+FIB5_MATRIX = numpy.array([[1,1],[1,0]])
+def fib5(n):
+    """fib5 uses matrix exponentiation"""
+    return numpy.dot(matrix_power(FIB5_MATRIX, n-1), numpy.array([1, 1]))[1]
+
 numbers = [1, 2, 3, 4, 5, 10, 15, 20, 25, 100]
-functions = [fib1, fib2, fib3, fib4]
+functions = [fib1, fib2, fib3, fib4, fib5]
 
 for idx, func in enumerate(functions):
     description = inspect.getdoc(func)
