@@ -1,3 +1,6 @@
+"""Three fibonacci implementations
+"""
+
 import inspect
 import math
 
@@ -5,7 +8,7 @@ print("Three fibonacci implementations")
 
 def fib1(n):
     """fib1 implements a simple recursive fibonacci function"""
-    if (n in (1, 2)):
+    if n in (1, 2):
         return 1
     else:
         return fib1(n-1) + fib1(n-2)
@@ -38,7 +41,6 @@ numbers = [1, 2, 3, 4, 5, 10, 15, 20, 25, 100]
 functions = [fib1, fib2, fib3, fib4]
 
 for idx, func in enumerate(functions):
-    func = functions[idx]
     description = inspect.getdoc(func)
     print("")
     print(f"Method number {idx+1}: {description}")
