@@ -5,7 +5,10 @@ print("Three fibonacci implementations")
 # TODO: Complete implementation of fib1
 def fib1(n):
     """fib1 implements a simple recursive fibonacci function"""
-    return -1
+    if (n in (1, 2)):
+        return 1
+    else:
+        return fib1(n-1) + fib1(n-2)
 
 # TODO: Complete implementation of fib2
 def fib2(n):
@@ -25,6 +28,8 @@ for idx in range(0, len(functions)):
     print("")
     print(f"Method number {idx+1}: {description}")
     for num in numbers:
+        if (num > 25 and idx == 0):
+            continue
         result = func(num)
         print("Fib[" + str(num) + "] = " + str(result))
 
