@@ -3,7 +3,6 @@ import math
 
 print("Three fibonacci implementations")
 
-# TODO: Complete implementation of fib1
 def fib1(n):
     """fib1 implements a simple recursive fibonacci function"""
     if (n in (1, 2)):
@@ -11,7 +10,6 @@ def fib1(n):
     else:
         return fib1(n-1) + fib1(n-2)
 
-# TODO: Complete implementation of fib2
 def fib2(n):
     """fib2 implements a iterative fibonacci function"""
     prev,prev2 = 1, 1
