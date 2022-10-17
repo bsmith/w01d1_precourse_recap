@@ -23,8 +23,19 @@ def fib3(n):
     phi = (1.0 + math.sqrt(5.0))/2.0
     return int((phi**n - (1-phi)**n)/math.sqrt(5))
 
+def fib4(n):
+    """fib4 recurses but only once per level"""
+    def helper(prev, prev2, n):
+        if n == 1:
+            return prev2
+        elif n == 2:
+            return prev
+        else:
+            return helper(prev + prev2, prev, n - 1)
+    return helper(1, 1, n)
+
 numbers = [1, 2, 3, 4, 5, 10, 15, 20, 25, 100]
-functions = [fib1, fib2, fib3]
+functions = [fib1, fib2, fib3, fib4]
 
 for idx, func in enumerate(functions):
     func = functions[idx]
