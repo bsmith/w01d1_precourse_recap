@@ -1,4 +1,5 @@
 import inspect
+import math
 
 print("Three fibonacci implementations")
 
@@ -13,11 +14,16 @@ def fib1(n):
 # TODO: Complete implementation of fib2
 def fib2(n):
     """fib2 implements a iterative fibonacci function"""
-    return -1
+    prev,prev2 = 1, 1
+    while n > 2:
+        prev,prev2 = prev + prev2, prev
+        n = n - 1
+    return prev
 
 def fib3(n):
     """fib3 implements the closed form formula"""
-    return -1
+    phi = (1.0 + math.sqrt(5.0))/2.0
+    return int((phi**n - (1-phi)**n)/math.sqrt(5))
 
 numbers = [1, 2, 3, 4, 5, 10, 15, 20, 25, 100]
 functions = [fib1, fib2, fib3]
