@@ -10,7 +10,11 @@ def fib1(n):
 # TODO: Complete implementation of fib2
 def fib2(n):
     """fib2 implements a iterative fibonacci function"""
-    return -1
+    prev,prev2 = 1, 1
+    while n > 2:
+        prev,prev2 = prev + prev2, prev
+        n = n - 1
+    return prev
 
 def fib3(n):
     """fib3 implements the closed form formula"""
