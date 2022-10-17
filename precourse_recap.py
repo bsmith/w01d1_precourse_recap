@@ -35,6 +35,7 @@ for idx in range(0, len(functions)):
     print(f"Method number {idx+1}: {description}")
     for num in numbers:
         if (num > 25 and idx == 0):
+            print(f"Skipping Fib[{num}] as it's too slow")
             continue
         result = func(num)
         print("Fib[" + str(num) + "] = " + str(result))
